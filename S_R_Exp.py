@@ -45,6 +45,7 @@ colors = mpf.make_marketcolors(up="#00ff00",
 #'default', 'ibd', 'kenan', 'mike', 'nightclouds', 'sas', 'starsandstripes', 'tradingview', 'yahoo']
 
 mpf_style = mpf.make_mpf_style(base_mpf_style = "binance", marketcolors = colors ,facecolor= '#202020', figcolor = "#787878")
+
 #=====================================================================================
 #=====================================================================================
 'Support and Resistance Functions'
@@ -52,7 +53,7 @@ Support = data[data.Low == data.Low.rolling(5, center=True).min()].Low
 Resistance = data[data.High == data.High.rolling(5, center=True).max()].High
 
 Levels = pd.concat([Support, Resistance])
-Levels = Levels[abs(Levels.diff()) > 70]
+Levels = Levels[abs(Levels.diff()) > 70 ]
 
 #=====================================================================================
 "Plots Data"
